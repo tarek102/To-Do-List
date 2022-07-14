@@ -20,7 +20,7 @@ body {
   max-width: 70%;
   padding-inline-start: 0;
   padding: 0 20px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
 }
 
 .to-do ul li {
@@ -36,7 +36,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
 }
 
 #add-list {
