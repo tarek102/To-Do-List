@@ -7,31 +7,29 @@ body {
 .to-do {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  width: 100%;
-  max-width: 90%;
-  /* margin: 0 auto; */
-  border: 1px solid blueviolet;
+  margin: 100px 0;
 }
 
-.to-do ul {
-  border: 1px solid yellow;
+.to-do-list {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* margin: 0 auto; */
   width: 100%;
   max-width: 70%;
+  padding-inline-start: 0;
+  padding: 0 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
 .to-do ul li {
   list-style: none;
-  border: 1px solid;
+  border-bottom: 1px solid rgba(99, 98, 98, 0.35);
   width: 100%;
   padding: 20px;
-  
+  display: flex;
+  justify-content: space-between;
 }
 
 .list-head {
