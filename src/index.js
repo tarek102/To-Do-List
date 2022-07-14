@@ -4,25 +4,38 @@ import '@fortawesome/fontawesome-free/js/solid';
 import '@fortawesome/fontawesome-free/js/regular';
 import '@fortawesome/fontawesome-free/js/brands';
 
-const toDoList = document.querySelector('.to-do-list');
-const listItems = [
-  {
-    description: 'Feed the dog',
-    completed: false,
-    index: 0,
-  },
-  {
-    description: 'Make breakfast',
-    completed: false,
-    index: 1,
-  },
-  {
-    description: 'Get grocery',
-    completed: false,
-    index: 2,
-  },
-];
 
+const toDoList = document.querySelector('.to-do-list');
+const listItems = [];
+
+
+// functions
+
+const addInput = document.querySelector('#add-list');
+// function addItem(e) { 
+  
+  
+  
+//   console.log(listItems);
+
+// }
+
+addInput.addEventListener('keypress', function(e){
+  if(e.key === 'Enter') {
+    if(addInput.value !== ''){
+      let newObj = {
+        description: addInput.value,
+        completed: false,
+        index: listItems.length
+      };
+      listItems.push(newObj);
+    }
+    addInput.value = '';
+  } else {
+    // e.preventDefault();
+    return false;
+  }
+  
 for (let i = 0; i < listItems.length; i += 1) {
   const newItem = document.createElement('li');
   newItem.setAttribute('id', i);
@@ -35,26 +48,8 @@ for (let i = 0; i < listItems.length; i += 1) {
     `;
   toDoList.appendChild(newItem);
 }
+});
 
-// listItems.forEach((item) => {
-//   count++;
-//   const newItem = document.createElement('li');
-//   newItem.setAttribute('id', count - 1)
-//   newItem.innerHTML = `
-//     <div>
-//     <input type="checkbox" class="items-list">
-//     <label> ${item.description}</label><br>
-//     </div>
-//     <i class="fa-solid fa-ellipsis-vertical"></i>
-//     `;
 
-//   toDoList.appendChild(newItem);
-// });
 
-const clearCompletedBtn = document.createElement('li');
-clearCompletedBtn.classList.add('clear-completed');
-clearCompletedBtn.innerHTML = `
-  <span>Clear all completed</span>
-`;
-
-toDoList.appendChild(clearCompletedBtn);
+console.log(listItems);
