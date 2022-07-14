@@ -23,18 +23,33 @@ const listItems = [
   },
 ];
 
-listItems.forEach((item) => {
+for (let i = 0; i < listItems.length; i += 1) {
   const newItem = document.createElement('li');
+  newItem.setAttribute('id', i);
   newItem.innerHTML = `
     <div>
     <input type="checkbox" class="items-list"> 
-    <label for="vehicle1"> ${item.description}</label><br>
+    <label> ${listItems[i].description}</label><br>
     </div>
     <i class="fa-solid fa-ellipsis-vertical"></i>
     `;
-
   toDoList.appendChild(newItem);
-});
+}
+
+// listItems.forEach((item) => {
+//   count++;
+//   const newItem = document.createElement('li');
+//   newItem.setAttribute('id', count - 1)
+//   newItem.innerHTML = `
+//     <div>
+//     <input type="checkbox" class="items-list">
+//     <label> ${item.description}</label><br>
+//     </div>
+//     <i class="fa-solid fa-ellipsis-vertical"></i>
+//     `;
+
+//   toDoList.appendChild(newItem);
+// });
 
 const clearCompletedBtn = document.createElement('li');
 clearCompletedBtn.classList.add('clear-completed');
