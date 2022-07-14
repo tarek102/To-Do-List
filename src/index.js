@@ -14,12 +14,12 @@ const listItems = [
   {
     description: 'Make breakfast',
     completed: false,
-    index: 0,
+    index: 1,
   },
   {
     description: 'Get grocery',
     completed: false,
-    index: 0,
+    index: 2,
   },
 ];
 
@@ -35,3 +35,11 @@ listItems.forEach((item) => {
 
   toDoList.appendChild(newItem);
 });
+
+const clearCompletedBtn = document.createElement('li');
+clearCompletedBtn.classList.add('clear-completed');
+clearCompletedBtn.innerHTML = `
+  <span>Clear all completed</span>
+`;
+
+toDoList.appendChild(clearCompletedBtn);

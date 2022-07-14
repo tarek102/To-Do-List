@@ -32,6 +32,10 @@ body {
   justify-content: space-between;
 }
 
+ul li svg {
+  cursor: pointer;
+}
+
 .list-head {
   display: flex;
   align-items: center;
@@ -42,4 +46,10 @@ body {
   width: 100%;
   padding: 15px 0;
   border: none;
+}
+
+.clear-completed {
+  justify-content: center !important;
+  color: #888;
+  background-color: rgb(245, 245, 245);
 }
