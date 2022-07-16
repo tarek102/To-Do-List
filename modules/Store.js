@@ -26,7 +26,6 @@ export default class Store {
     filteredLists.forEach((filteredList, index) => {
       filteredList.index = index + 1;
     });
-
     localStorage.setItem('Lists', JSON.stringify(filteredLists));
   }
 }

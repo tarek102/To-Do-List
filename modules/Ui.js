@@ -10,8 +10,10 @@ export default class Ui {
     newItem.setAttribute('data-index', list.index);
     newItem.innerHTML = `
       <div data-index="${list.index}" class="checkbox">
-        <input  class="strikethrough" type="checkbox" ${list.completed ? 'checked' : ''}>
-        <label data-index="${list.index}">${list.description}</label>
+
+        <input data-index="${list.index}" type="checkbox" ${list.completed ? 'checked' : ''} class="checkbox-input">
+        <label class="checkbox-label ${list.completed ? 'strikethrough-completed' : ''}" data-index="${list.index}">${list.description}</label>
+        
       </div>
       <i data-index="${list.index}" class="fa-solid fa-trash-can remove-btn"></i>
       `;
