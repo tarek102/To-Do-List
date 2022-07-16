@@ -21,6 +21,7 @@ body {
   padding-inline-start: 0;
   padding: 0 20px;
   box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+  position: relative;
 }
 
 .to-do ul li {
@@ -30,6 +31,14 @@ body {
   padding: 20px;
   display: flex;
   justify-content: space-between;
+}
+
+.clear-all-list {
+  position: absolute;
+  bottom: -40px;
+  left: 10px;
+  width: 100%;
+  margin: auto;
 }
 
 ul li svg {
