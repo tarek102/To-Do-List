@@ -34,6 +34,7 @@ body {
 
 ul li svg {
   cursor: pointer;
+  padding: 20px;
 }
 
 .list-head {
@@ -52,4 +53,8 @@ ul li svg {
   justify-content: center !important;
   color: #888;
   background-color: rgb(245, 245, 245);
+}
+
+.strikethrough:checked + label {
+  text-decoration: line-through;
 }
