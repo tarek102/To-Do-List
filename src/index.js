@@ -1,60 +1,68 @@
+/* eslint-disable max-classes-per-file */
+
 import './style.css';
+import Store from '../modules/Store';
+import Ui from '../modules/Ui';
+import List from '../modules/List';
 import '@fortawesome/fontawesome-free/js/fontawesome';
 import '@fortawesome/fontawesome-free/js/solid';
 import '@fortawesome/fontawesome-free/js/regular';
 import '@fortawesome/fontawesome-free/js/brands';
 
+// variables
+
 const toDoList = document.querySelector('.to-do-list');
-const listItems = [
-  {
-    description: 'Feed the dog',
-    completed: false,
-    index: 0,
-  },
-  {
-    description: 'Make breakfast',
-    completed: false,
-    index: 1,
-  },
-  {
-    description: 'Get grocery',
-    completed: false,
-    index: 2,
-  },
-];
 
-for (let i = 0; i < listItems.length; i += 1) {
-  const newItem = document.createElement('li');
-  newItem.setAttribute('id', i);
-  newItem.innerHTML = `
-    <div>
-    <input type="checkbox" class="items-list"> 
-    <label> ${listItems[i].description}</label><br>
-    </div>
-    <i class="fa-solid fa-ellipsis-vertical"></i>
-    `;
-  toDoList.appendChild(newItem);
-}
+document.addEventListener('DOMContentLoaded', Ui.DisplayList());
 
-// listItems.forEach((item) => {
-//   count++;
-//   const newItem = document.createElement('li');
-//   newItem.setAttribute('id', count - 1)
-//   newItem.innerHTML = `
-//     <div>
-//     <input type="checkbox" class="items-list">
-//     <label> ${item.description}</label><br>
-//     </div>
-//     <i class="fa-solid fa-ellipsis-vertical"></i>
-//     `;
+const addInput = document.querySelector('#add-list');
+addInput.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+    const Lists = Store.getLists();
+    const inputValue = document.querySelector('#add-list').value;
+    const list = new List(inputValue, Lists.length + 1);
+    Store.setLists(list);
+    Ui.addLists(list);
+  } else {
+    return false;
+  }
+  addInput.value = '';
+  return true;
+});
 
-//   toDoList.appendChild(newItem);
-// });
+const checkBoxDiv = document.querySelectorAll('.checkbox');
+checkBoxDiv.forEach((el, i) => {
+  el.addEventListener('change', () => {
+    const List = Store.getLists();
+    const checked = document.querySelectorAll('.strikethrough');
+    List[i].completed = checked[i].checked;
+    localStorage.setItem('Lists', JSON.stringify(List));
+  });
+});
 
-const clearCompletedBtn = document.createElement('li');
-clearCompletedBtn.classList.add('clear-completed');
-clearCompletedBtn.innerHTML = `
-  <span>Clear all completed</span>
-`;
+// remove btn event listener
 
-toDoList.appendChild(clearCompletedBtn);
+toDoList.addEventListener('click', (e) => {
+  if (e.target.classList.contains('remove-btn')) {
+    const deleted = Number(e.target.dataset.index);
+    Store.deleteLists(deleted);
+    e.target.parentElement.remove();
+  }
+
+  if (e.target.classList.contains('add-btn')) {
+    const Lists = Store.getLists();
+    const inputValue = document.querySelector('#add-list').value;
+    const list = new List(inputValue, Lists.length + 1);
+    Store.setLists(list);
+    Ui.addLists(list);
+  } else {
+    return false;
+  }
+  addInput.value = '';
+  return true;
+});
+
+const deleteAll = document.querySelector('.clear-all-list');
+deleteAll.addEventListener('click', () => {
+  console.log(0);
+});
