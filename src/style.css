@@ -33,6 +33,14 @@ body {
   justify-content: space-between;
 }
 
+.clear-all-list {
+  position: absolute;
+  bottom: -40px;
+  left: 10px;
+  width: 100%;
+  margin: auto;
+}
+
 ul li svg {
   cursor: pointer;
   padding: 20px;

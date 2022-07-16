@@ -3,6 +3,9 @@ import List from '../modules/List';
 import Store from '../modules/Store';
 import Ui from '../modules/Ui';
 import './style.css';
+import Store from '../modules/Store';
+import Ui from '../modules/Ui';
+import List from '../modules/List';
 import '@fortawesome/fontawesome-free/js/fontawesome';
 import '@fortawesome/fontawesome-free/js/solid';
 import '@fortawesome/fontawesome-free/js/regular';
@@ -12,6 +15,7 @@ import '@fortawesome/fontawesome-free/js/brands';
 
 const toDoList = document.querySelector('.to-do-list');
 const addInput = document.querySelector('#add-list');
+
 
 document.addEventListener('DOMContentLoaded', Ui.DisplayList());
 
