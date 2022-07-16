@@ -21,6 +21,7 @@ body {
   padding-inline-start: 0;
   padding: 0 20px;
   box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+  position: relative;
 }
 
 .to-do ul li {
@@ -49,12 +50,21 @@ ul li svg {
   border: none;
 }
 
-.clear-completed {
+.clear-all-completed {
   justify-content: center !important;
   color: #888;
+  font-size: 25px;
+  text-align: center;
   background-color: rgb(245, 245, 245);
+  position: absolute;
+  bottom: -50px;
+  left: 35%;
 }
 
-.strikethrough:checked + label {
-  text-decoration: line-through;
+.strikethrough-completed {
+  text-decoration: line-through !important;
+}
+
+.clear-completed {
+  border-bottom: none !important;
 }
