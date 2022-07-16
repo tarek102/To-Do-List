@@ -13,7 +13,6 @@ import '@fortawesome/fontawesome-free/js/brands';
 const toDoList = document.querySelector('.to-do-list');
 const addInput = document.querySelector('#add-list');
 
-
 document.addEventListener('DOMContentLoaded', Ui.DisplayList());
 
 addInput.addEventListener('keypress', (e) => {
