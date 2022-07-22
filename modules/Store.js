@@ -13,12 +13,14 @@ export default class Store {
     const Lists = this.getLists();
     Lists.push(list);
     localStorage.setItem('Lists', JSON.stringify(Lists));
+
+    return Lists[Lists.length - 1];
   }
 
-  static deleteLists = (deleted) => {
+  static deleteLists = (i) => {
     const Lists = this.getLists();
     const filteredLists = Lists.filter(
-      (listItem) => listItem.index !== deleted,
+      (listItem) => listItem.index !== i,
     );
 
     // update index of list
@@ -27,5 +29,6 @@ export default class Store {
       filteredList.index = index + 1;
     });
     localStorage.setItem('Lists', JSON.stringify(filteredLists));
+    return (filteredLists);
   }
 }

@@ -33,8 +33,8 @@ addInput.addEventListener('keypress', (e) => {
 
 toDoList.addEventListener('click', (e) => {
   if (e.target.classList.contains('remove-btn')) {
-    const deleted = Number(e.target.dataset.index);
-    Store.deleteLists(deleted);
+    const i = Number(e.target.dataset.index);
+    Store.deleteLists(i);
     e.target.parentElement.remove();
   }
 

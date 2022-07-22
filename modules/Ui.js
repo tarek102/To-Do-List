@@ -25,5 +25,6 @@ export default class Ui {
     Lists.forEach((list) => {
       this.addLists(list);
     });
+    return Lists;
   }
 }
