@@ -21,6 +21,11 @@ describe('Add and Remove test', () => {
     test('Add list test', () => {
       expect(Store.setLists(testData[0])).toEqual(testData[0]);
     });
+    expect(Store.setLists(testData[1])).toEqual(testData[1])
+    })
+    test('Add list test', () => {
+      expect(Store.setLists(testData[2])).toEqual(testData[2])
+    })
   });
 
   describe('Remove test', () => {
@@ -35,4 +40,3 @@ describe('Add and Remove test', () => {
       expect(Store.deleteLists(2)).not.toEqual(lists[1]);
     });
   });
-});
