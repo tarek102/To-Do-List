@@ -21,22 +21,22 @@ describe('Add and Remove test', () => {
     test('Add list test', () => {
       expect(Store.setLists(testData[0])).toEqual(testData[0]);
     });
-    expect(Store.setLists(testData[1])).toEqual(testData[1])
-    })
-    test('Add list test', () => {
-      expect(Store.setLists(testData[2])).toEqual(testData[2])
-    })
+    expect(Store.setLists(testData[1])).toEqual(testData[1]);
   });
+  test('Add list test', () => {
+    expect(Store.setLists(testData[2])).toEqual(testData[2]);
+  });
+});
 
-  describe('Remove test', () => {
-    test('Remove list test', () => {
-      const lists = Store.getLists();
-      lists.splice(0, 1);
-      expect(Store.deleteLists(1)).not.toEqual(lists[0]);
-    });
-    test('Remove list test', () => {
-      const lists = Store.getLists();
-      lists.splice(1, 1);
-      expect(Store.deleteLists(2)).not.toEqual(lists[1]);
-    });
+describe('Remove test', () => {
+  test('Remove list test', () => {
+    const lists = Store.getLists();
+    lists.splice(0, 1);
+    expect(Store.deleteLists(1)).not.toEqual(lists[0]);
   });
+  test('Remove list test', () => {
+    const lists = Store.getLists();
+    lists.splice(1, 1);
+    expect(Store.deleteLists(2)).not.toEqual(lists[1]);
+  });
+});
