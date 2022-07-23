@@ -60,6 +60,28 @@ toDoList.addEventListener('click', (e) => {
     });
   }
 
+  if (e.target.classList.contains('checkbox-label')) {
+    const parent = e.target.parentElement;
+    const index = Number(e.target.dataset.index);
+    const lists = Store.getLists();
+    const editInput = document.createElement('input');
+    editInput.setAttribute('type', 'text');
+    editInput.setAttribute('class', 'edit-label');
+    parent.removeChild(e.target);
+    parent.appendChild(editInput);
+    editInput.addEventListener('keypress', (el) => {
+      if (el.key === 'Enter') {
+        lists[index - 1].description = editInput.value;
+        localStorage.setItem('Lists', JSON.stringify(lists));
+        editInput.value = '';
+        parent.removeChild(editInput);
+        const editedLabel = document.createElement('label');
+        editedLabel.innerHTML = `${lists[index - 1].description}`;
+        parent.appendChild(editedLabel);
+      }
+    });
+  }
+
   if (e.target.classList.contains('add-btn')) {
     const Lists = Store.getLists();
     const inputValue = document.querySelector('#add-list').value;
