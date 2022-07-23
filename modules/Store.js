@@ -31,4 +31,11 @@ export default class Store {
     localStorage.setItem('Lists', JSON.stringify(filteredLists));
     return (filteredLists);
   }
+
+  static editTask = (el) => {
+    const Lists = this.getLists();
+    Lists.forEach(list => {
+      list.description = el;
+    })
+  }
 }
