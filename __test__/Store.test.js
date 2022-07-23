@@ -82,5 +82,11 @@ describe('Add and Remove test', () => {
       const updatedToDo = local[1 - 1];
       expect(updatedToDo.completed).toEqual(false);
     });
+
+    test('Check if task completed test', () => {
+      const local = JSON.parse(localStorage.getItem('Lists'));
+      const updatedToDo = local[1 - 1];
+      expect(updatedToDo.completed).toBeDefined();
+    });
   });
 });
