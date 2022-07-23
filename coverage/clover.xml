@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1658539842487" clover="3.2.0">
-  <project timestamp="1658539842488" name="All files">
-    <metrics statements="35" coveredstatements="28" conditionals="6" coveredconditionals="4" methods="10" coveredmethods="6" elements="51" coveredelements="38" complexity="0" loc="35" ncloc="35" packages="1" files="2" classes="2"/>
+<coverage generated="1658582968983" clover="3.2.0">
+  <project timestamp="1658582968984" name="All files">
+    <metrics statements="36" coveredstatements="32" conditionals="6" coveredconditionals="4" methods="10" coveredmethods="8" elements="52" coveredelements="44" complexity="0" loc="36" ncloc="36" packages="1" files="2" classes="2"/>
     <file name="Store.js" path="E:\Dev\Microverse\updated to-do-list\To-Do-List\modules\Store.js">
-      <metrics statements="22" coveredstatements="19" conditionals="2" coveredconditionals="2" methods="7" coveredmethods="5"/>
+      <metrics statements="23" coveredstatements="23" conditionals="2" coveredconditionals="2" methods="7" coveredmethods="7"/>
       <line num="2" count="2" type="stmt"/>
-      <line num="4" count="7" type="cond" truecount="2" falsecount="0"/>
+      <line num="4" count="14" type="cond" truecount="2" falsecount="0"/>
       <line num="5" count="1" type="stmt"/>
-      <line num="7" count="6" type="stmt"/>
-      <line num="9" count="7" type="stmt"/>
+      <line num="7" count="13" type="stmt"/>
+      <line num="9" count="14" type="stmt"/>
       <line num="12" count="2" type="stmt"/>
       <line num="13" count="3" type="stmt"/>
       <line num="14" count="3" type="stmt"/>
@@ -22,10 +22,11 @@
       <line num="29" count="3" type="stmt"/>
       <line num="31" count="2" type="stmt"/>
       <line num="32" count="2" type="stmt"/>
-      <line num="35" count="2" type="stmt"/>
-      <line num="36" count="0" type="stmt"/>
-      <line num="37" count="0" type="stmt"/>
-      <line num="38" count="0" type="stmt"/>
+      <line num="36" count="2" type="stmt"/>
+      <line num="37" count="2" type="stmt"/>
+      <line num="38" count="2" type="stmt"/>
+      <line num="39" count="2" type="stmt"/>
+      <line num="41" count="2" type="stmt"/>
     </file>
     <file name="Ui.js" path="E:\Dev\Microverse\updated to-do-list\To-Do-List\modules\Ui.js">
       <metrics statements="13" coveredstatements="9" conditionals="4" coveredconditionals="2" methods="3" coveredmethods="1"/>

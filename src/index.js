@@ -77,12 +77,9 @@ toDoList.addEventListener('click', (e) => {
         parent.removeChild(editInput);
         const editedLabel = document.createElement('label');
         editedLabel.innerHTML = `${lists[index - 1].description}`;
-        parent.appendChild(editedLabel)
+        parent.appendChild(editedLabel);
       }
-    })
-    
-        console.log(lists);
-
+    });
   }
 
   if (e.target.classList.contains('add-btn')) {
