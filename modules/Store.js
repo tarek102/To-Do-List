@@ -32,6 +32,7 @@ export default class Store {
     return (filteredLists);
   }
 
+  // Edit/Update task 
   static editTask = (el) => {
     const Lists = this.getLists();
     Lists.forEach(list => {
